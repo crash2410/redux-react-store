@@ -7,7 +7,7 @@ const menuLoaded = (newMenu) => {
 
 const menuRequsted = () => {
     return {
-        type: 'MENU_REQUSTED'
+        type: 'MENU_REQUESTED'
     }
 };
 

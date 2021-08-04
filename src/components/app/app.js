@@ -7,7 +7,7 @@ import WithRestoService from '../hoc/with-resto-service';
 import Background from './food-bg.jpg';
 import ItemPage from '../pages/itemPage';
 
-const App = ({ RestoService }) => {
+const App = () => {
     return (
         <div style={{ background: `url(${Background}) center center/cover no-repeat` }} className="app">
             <AppHeader total={50} />
