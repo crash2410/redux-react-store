@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import MenuListItem from '../menu-list-item';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import WithRestoService from '../hoc/index';
-import { menuLoaded, menuRequsted, menuError } from '../../actions/index';
+import {menuError, menuLoaded, menuRequsted, addedToCart, deleteFromCart} from '../../actions/index';
 import Spinner from '../spinner';
 import Error from '../error/index';
 
@@ -19,10 +19,10 @@ class MenuList extends Component {
     }
 
     render() {
-        const { menuItems, loading, error } = this.props;
+        const {menuItems, loading, error, addedToCart} = this.props;
 
         const items = menuItems.map((menuItem) => {
-            return <MenuListItem key={menuItem.id} menuItem={menuItem} />
+            return <MenuListItem key={menuItem.id} menuItem={menuItem} onAddToCart={() => addedToCart(menuItem.id)}/>
         })
         const spinner = loading ? <Spinner /> : null;
         const errors = error ? <Error /> : null;
@@ -31,7 +31,7 @@ class MenuList extends Component {
             <View items={items} spinner={spinner} errors={errors}/>
         )
     }
-};
+}
 
 const View = ({ items, spinner, errors }) => {
     return (
@@ -55,7 +55,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     menuLoaded,
     menuRequsted,
-    menuError
+    menuError,
+    addedToCart,
+    deleteFromCart
 };
 
 
