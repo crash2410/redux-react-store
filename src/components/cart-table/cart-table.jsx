@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import './cart-table.scss';
-import {deleteFromCart} from "../../actions";
+import {deleteFromCart} from "../../actions/action";
 
 const CartTable = ({items, deleteFromCart}) => {
     return (

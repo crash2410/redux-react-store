@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { MainPage, CartPage } from '../pages';
-import AppHeader from '../app-header';
+import CartPage from '../pages/cart-page/cart-page'
+import MainPage from '../pages/main-page/main-page';
+import AppHeader from '../app-header/app-header';
 import WithRestoService from '../hoc/with-resto-service';
 
 import Background from './food-bg.jpg';
-import ItemPage from '../pages/itemPage';
+import ItemPage from '../pages/item-page/item-page';
 
 const App = () => {
     return (

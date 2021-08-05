@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuList from '../menu-list';
+import MenuList from '../../menu-list/menu-list';
 
 const MainPage = () => {
     return (

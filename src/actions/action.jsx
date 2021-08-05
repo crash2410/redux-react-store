@@ -5,7 +5,7 @@ const menuLoaded = (newMenu) => {
     }
 };
 
-const menuRequsted = () => {
+const menuRequested = () => {
     return {
         type: 'MENU_REQUESTED'
     }
@@ -33,7 +33,7 @@ const deleteFromCart = (id) => {
 
 export {
     menuLoaded,
-    menuRequsted,
+    menuRequested,
     menuError,
     addedToCart,
     deleteFromCart
