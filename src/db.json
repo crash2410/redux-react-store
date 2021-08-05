@@ -34,6 +34,13 @@
 			"url": "https://i.cbc.ca/1.4491288.1516208229!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cowboysteak.jpg",
 			"category": "meat",
 			"id": 5
+		},
+		{
+			"title": "Egg Salad",
+			"price": 29,
+			"url": "https://assets.epicurious.com/photos/60ff0fc06a63b0a3c672e6ab/16:9/w_1920,c_limit/GrilledBroccoliEggSalad_HERO_072221_19259.jpg",
+			"category": "salads",
+			"id": 6
 		}
 	]
 }
