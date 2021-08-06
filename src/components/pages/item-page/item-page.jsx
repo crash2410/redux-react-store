@@ -68,7 +68,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     menuLoaded,
-    menuRequsted: menuRequested,
+    menuRequested,
     menuError,
     addedToCart
 };

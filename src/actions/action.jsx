@@ -26,8 +26,21 @@ const addedToCart = (id) => {
 
 const deleteFromCart = (id) => {
     return {
+        type: 'ALL_ITEM_REMOVE_FROM_CART',
+        payload: id
+    }
+}
+
+const deleteItemFromCart = id => {
+    return {
         type: 'ITEM_REMOVE_FROM_CART',
         payload: id
+    }
+}
+
+const updateTotalPrice = () => {
+    return {
+        type: 'UPDATE_TOTAL_PRICE',
     }
 }
 
@@ -36,5 +49,7 @@ export {
     menuRequested,
     menuError,
     addedToCart,
-    deleteFromCart
+    deleteFromCart,
+    deleteItemFromCart,
+    updateTotalPrice
 };
