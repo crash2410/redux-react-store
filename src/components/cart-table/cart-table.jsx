@@ -2,9 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import './cart-table.scss';
-import {addedToCart, deleteFromCart, deleteItemFromCart} from "../../actions/action";
+import {addedToCart, deleteFromCart, deleteItemFromCart, sendingItemsFromCart} from "../../actions/action";
 
-const CartTable = ({items, deleteFromCart, addedToCart, deleteItemFromCart, totalPrice}) => {
+const CartTable = ({items, deleteFromCart, addedToCart, deleteItemFromCart, totalPrice, sendingItemsFromCart}) => {
     const content = items.map((item) => {
         const {title, price, url, id, count} = item;
         return (
@@ -32,7 +32,14 @@ const CartTable = ({items, deleteFromCart, addedToCart, deleteItemFromCart, tota
     })
 
     const notItems = content.length === 0 ? <div className="cart__not-items">Корзина пуста</div> :
-        <div className="cart__total-price">Сумма вашего заказа: {totalPrice}$</div>;
+        (
+            <>
+                <div className="cart__total-price">
+                    Сумма вашего заказа: {totalPrice}$
+                    <button onClick={() => sendingItemsFromCart()} className="cart__send-order">Отправить заказ</button>
+                </div>
+            </>
+        );
 
     return (
         <View content={content} notItems={notItems}/>
@@ -62,7 +69,8 @@ const mapStateToProps = ({items, totalPrice}) => {
 const mapDispatchToProps = {
     deleteFromCart,
     addedToCart,
-    deleteItemFromCart
+    deleteItemFromCart,
+    sendingItemsFromCart
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartTable);

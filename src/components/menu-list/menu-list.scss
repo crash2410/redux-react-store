@@ -1,10 +1,12 @@
 .menu {
-    &__list {
-        min-height: 100vh;
-        padding: 50px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
+  &__list {
+    margin: 0 auto 0 auto;
+    padding-left: 10px;
+    max-width: 1920px;
+    padding-top: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 10px;
+  }
 }

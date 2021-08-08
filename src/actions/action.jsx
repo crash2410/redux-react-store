@@ -44,6 +44,12 @@ const updateTotalPrice = () => {
     }
 }
 
+const sendingItemsFromCart = () => {
+    return {
+        type: 'SENDING_ITEMS_FROM_CART',
+    }
+}
+
 export {
     menuLoaded,
     menuRequested,
@@ -51,5 +57,6 @@ export {
     addedToCart,
     deleteFromCart,
     deleteItemFromCart,
-    updateTotalPrice
+    updateTotalPrice,
+    sendingItemsFromCart
 };

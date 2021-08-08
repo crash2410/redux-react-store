@@ -3,10 +3,12 @@ const initialState = {
     loading: true,
     error: false,
     items: [],
-    totalPrice: 0
+    totalPrice: 0,
+    sendItemsFromCart: []
 }
 
 const reducer = (state = initialState, action) => {
+    console.log(state);
     switch (action.type) {
         case 'MENU_LOADED':
             return {
@@ -64,7 +66,7 @@ const reducer = (state = initialState, action) => {
                     ]
                 };
             }
-        case 'ALL_ITEM_REMOVE_FROM_CART':
+        case 'ALL_ITEM_REMOVE_FROM_CART': {
             const idx = action.payload;
             const itemIndex = state.items.findIndex(item => item.id === idx);
             return {
@@ -74,7 +76,8 @@ const reducer = (state = initialState, action) => {
                     ...state.items.slice(itemIndex + 1)
                 ]
             }
-        case 'ITEM_REMOVE_FROM_CART': {
+        }
+        case'ITEM_REMOVE_FROM_CART': {
             const id = action.payload;
             const item = state.menu.find(item => item.id === id);
             const indx = state.items.findIndex(item => item.id === id);
@@ -107,7 +110,7 @@ const reducer = (state = initialState, action) => {
         }
         case 'UPDATE_TOTAL_PRICE':
             let totalPrice = 0;
-            for(let i = 0; i < state.items.length; i++){
+            for (let i = 0; i < state.items.length; i++) {
                 totalPrice += state.items[i].price;
             }
 
@@ -115,6 +118,20 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 totalPrice
             }
+        case 'SENDING_ITEMS_FROM_CART': {
+            let newArray = state.items;
+
+            return {
+                ...state,
+                sendItemsFromCart: [
+                    ...state.sendItemsFromCart,
+                    newArray
+                ],
+                items: [],
+                totalPrice: 0
+            }
+        }
+
         default:
             return state;
     }

@@ -10,8 +10,14 @@ import './menu-list.scss';
 
 class MenuList extends Component {
     componentDidMount() {
-        this.props.menuRequsted();
+        if(this.props.menuItems.length === 0){
+            this.props.menuRequsted();
+        }
+        this.onDataLoaded();
 
+    }
+
+    onDataLoaded = () => {
         const { RestoService } = this.props;
         RestoService.getMenuItems()
             .then(res => this.props.menuLoaded(res))
@@ -35,11 +41,11 @@ class MenuList extends Component {
 
 const View = ({ items, spinner, errors }) => {
     return (
-        <ul className="menu__list">
-            {spinner}
-            {items}
-            {errors}
-        </ul>
+           <ul className="menu__list">
+               {spinner}
+               {items}
+               {errors}
+           </ul>
     )
 }
 

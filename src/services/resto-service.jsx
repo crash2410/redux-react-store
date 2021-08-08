@@ -1,5 +1,5 @@
 export default class RestoService {
-    _apiBase = 'http://localhost:3000';
+    _apiBase = 'https://610e2db548beae001747ba67.mockapi.io/restaurant';
 
     getResource = async (url) => {
         const res = await fetch(`${this._apiBase}${url}`);

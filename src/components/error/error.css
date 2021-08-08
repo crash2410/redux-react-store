@@ -1,0 +1,13 @@
+.error {
+    background: url('./error.jpg') center center/cover no-repeat;
+    height: 100vh;
+}
+
+.error__message{
+    max-width: 1920px;
+    padding-top: 250px;
+    padding-left: 100px;
+    font-size: 60px;
+    color: white;
+    font-weight: 500;
+}
